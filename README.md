@@ -8,11 +8,42 @@
 ![Version](https://img.shields.io/badge/version-0.2.0-blue)
 ![No Build Required](https://img.shields.io/badge/build-none%20required-brightgreen)
 
-**Translate Udemy captions and transcripts into any language — instantly, on top of the video.**
+**Translate Udemy captions and transcripts into any language — live, on top of the video.**
 
 [Features](#-features) · [Screenshots](#-screenshots) · [Install](#-install) · [How It Works](#-how-it-works) · [Providers](#-translation-providers) · [Privacy](#-privacy)
 
 </div>
+
+---
+
+### 🌍 Available in your language
+
+| | Language | README |
+|---|---|---|
+| 🇸🇦 | العربية | [docs/README.ar.md](docs/README.ar.md) |
+| 🇩🇪 | Deutsch | [docs/README.de.md](docs/README.de.md) |
+| 🇬🇷 | Ελληνικά | [docs/README.el.md](docs/README.el.md) |
+| 🇺🇸 | English | **You are here** |
+| 🇪🇸 | Español | [docs/README.es.md](docs/README.es.md) |
+| 🇫🇷 | Français | [docs/README.fr.md](docs/README.fr.md) |
+| 🇮🇳 | हिन्दी | [docs/README.hi.md](docs/README.hi.md) |
+| 🇮🇩 | Bahasa Indonesia | [docs/README.id.md](docs/README.id.md) |
+| 🇮🇹 | Italiano | [docs/README.it.md](docs/README.it.md) |
+| 🇯🇵 | 日本語 | [docs/README.ja.md](docs/README.ja.md) |
+| 🇰🇷 | 한국어 | [docs/README.ko.md](docs/README.ko.md) |
+| 🇳🇱 | Nederlands | [docs/README.nl.md](docs/README.nl.md) |
+| 🇵🇱 | Polski | [docs/README.pl.md](docs/README.pl.md) |
+| 🇵🇹 | Português | [docs/README.pt.md](docs/README.pt.md) |
+| 🇧🇷 | Português (BR) | [docs/README.pt-BR.md](docs/README.pt-BR.md) |
+| 🇷🇴 | Română | [docs/README.ro.md](docs/README.ro.md) |
+| 🇷🇺 | Русский | [docs/README.ru.md](docs/README.ru.md) |
+| 🇸🇪 | Svenska | [docs/README.sv.md](docs/README.sv.md) |
+| 🇹🇭 | ภาษาไทย | [docs/README.th.md](docs/README.th.md) |
+| 🇹🇷 | Türkçe | [docs/README.tr.md](docs/README.tr.md) |
+| 🇺🇦 | Українська | [docs/README.uk.md](docs/README.uk.md) |
+| 🇻🇳 | Tiếng Việt | [docs/README.vi.md](docs/README.vi.md) |
+| 🇨🇳 | 中文（简体） | [docs/README.zh-CN.md](docs/README.zh-CN.md) |
+| 🇹🇼 | 中文（繁體） | [docs/README.zh-TW.md](docs/README.zh-TW.md) |
 
 ---
 
@@ -33,9 +64,9 @@
 
 <div align="center">
 
-| First-Run Setup | Settings Panel | LibreTranslate Mode |
-|:---:|:---:|:---:|
-| ![Onboarding](screenshots/popup-onboarding.png) | ![Settings](screenshots/popup-settings.png) | ![LibreTranslate](screenshots/popup-settings-libretranslate.png) |
+| First-Run Setup | Settings Panel |
+|:---:|:---:|
+| ![Onboarding](screenshots/popup-onboarding.png) | ![Settings](screenshots/settings-en.png) |
 
 </div>
 
@@ -49,7 +80,7 @@
 2. Open **`chrome://extensions`** in Chrome
 3. Enable **Developer mode** (top-right toggle)
 4. Click **Load unpacked**
-5. Select the **`extension/`** folder inside this repo
+5. Select the **`extension/`** folder
 
 > Chrome Web Store release coming soon.
 
@@ -73,10 +104,10 @@ Udemy lecture page
  Overlay injected on top of the video
 ```
 
-1. The content script watches for active caption text on the Udemy lecture page.
+1. The content script watches for active caption text on the page.
 2. Each new line is sent to the background service worker.
 3. The service worker translates the text and caches the result.
-4. The translated subtitle is rendered as an overlay directly on top of the video.
+4. The translated subtitle is rendered as an overlay on top of the video.
 
 ---
 
@@ -84,19 +115,19 @@ Udemy lecture page
 
 | Provider | Setup | Notes |
 |---|---|---|
-| **Google GTX** | None | Default. Zero-config, no API key needed. Not an official Google Cloud integration. |
+| **Google GTX** | None | Default. Zero-config, no API key needed. |
 | **LibreTranslate** | Endpoint URL | Self-hosted or public instance. Full privacy control. |
 
 ---
 
 ## 🎛️ Usage
 
-1. Navigate to any Udemy lecture page
-2. Click the extension icon in the toolbar
-3. On first launch — answer **"What's your main language?"**
-4. Enable captions on the video (if the course has them) or open the transcript panel
-5. Keep **Extension enabled** toggled on
-6. The translated subtitle overlay appears on top of the video
+1. Go to any Udemy lecture page
+2. Click the extension icon
+3. On first launch — pick your language
+4. Enable captions on the video or open the transcript panel
+5. Keep **Extension enabled** on
+6. Translated subtitles appear on top of the video
 
 ### Source Mode Options
 
@@ -114,20 +145,19 @@ Udemy lecture page
 ```
 udemy-live-subtitle-translator/
 ├── extension/
-│   ├── manifest.json     ← Chrome extension manifest (MV3)
-│   ├── background.js     ← Translation logic & response cache
-│   ├── content.js        ← Caption detection & overlay rendering
-│   ├── content.css       ← Subtitle overlay styles
-│   ├── popup.html        ← Extension popup UI
-│   ├── popup.js          ← Onboarding & settings logic
-│   └── popup.css         ← Popup styles
-├── screenshots/          ← UI screenshots for docs
-├── .github/
-│   └── workflows/
-│       └── validate.yml  ← GitHub Actions syntax checks
+│   ├── manifest.json
+│   ├── background.js
+│   ├── content.js
+│   ├── content.css
+│   ├── popup.html
+│   ├── popup.js
+│   └── popup.css
+├── docs/                 ← Translated READMEs
+├── screenshots/
+├── .github/workflows/
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
-├── LICENSE               ← MIT
+├── LICENSE
 ├── PRIVACY.md
 └── SECURITY.md
 ```
@@ -136,21 +166,15 @@ udemy-live-subtitle-translator/
 
 ## ⚠️ Limitations
 
-- Only works with courses that already have **captions or a transcript** panel
-- Does **not** do live speech-to-text — no audio processing
-- Translation quality depends on the selected provider and language pair
-- Google GTX is not an official API; use LibreTranslate for production-grade reliability
+- Only works with courses that already have captions or a transcript panel
+- Does not do live speech-to-text
+- Translation quality depends on the provider and language pair
 
 ---
 
 ## 🔒 Privacy
 
-This extension may send caption/transcript text to the selected translation provider.
-
-- **Google GTX** — text is sent to Google's servers
-- **LibreTranslate** — text goes to your configured endpoint only
-
-No browsing history, no personal data, and no Udemy credentials are ever collected.
+This extension may send caption/transcript text to the selected translation provider. No browsing history, personal data, or Udemy credentials are ever collected.
 
 Read [PRIVACY.md](./PRIVACY.md) for full details.
 
@@ -158,23 +182,7 @@ Read [PRIVACY.md](./PRIVACY.md) for full details.
 
 ## 🤝 Contributing
 
-Pull requests and issues are welcome! See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
-
----
-
-## 🛡️ Security
-
-To report a security vulnerability, see [SECURITY.md](./SECURITY.md).
-
----
-
-## 📋 Local Checks
-
-```powershell
-node --check extension\background.js
-node --check extension\content.js
-node --check extension\popup.js
-```
+Pull requests and issues are welcome. See [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ---
 
