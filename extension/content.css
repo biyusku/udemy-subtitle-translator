@@ -1,0 +1,112 @@
+#udtr-root {
+  position: fixed;
+  z-index: 2147483647;
+  pointer-events: none;
+  display: none;
+}
+
+#udtr-root.udtr-visible {
+  display: block;
+}
+
+#udtr-root.udtr-fullscreen {
+  left: 0 !important;
+  top: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
+#udtr-root .udtr-toolbar {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  pointer-events: auto;
+}
+
+#udtr-root .udtr-toggle {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  min-width: 58px;
+  padding: 8px 12px;
+  font: 600 12px/1.1 "Segoe UI", sans-serif;
+  text-transform: uppercase;
+  color: #1f2937;
+  background: rgba(255, 241, 223, 0.96);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.22);
+  cursor: pointer;
+}
+
+#udtr-root .udtr-toggle[data-enabled="false"] {
+  background: rgba(31, 41, 55, 0.88);
+  color: #f8fafc;
+}
+
+#udtr-root .udtr-badge {
+  max-width: 220px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font: 500 12px/1.2 "Segoe UI", sans-serif;
+  color: #f8fafc;
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#udtr-root .udtr-subtitle-shell {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 5.5% 54px;
+}
+
+#udtr-root .udtr-subtitle-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: min(960px, 100%);
+}
+
+#udtr-root .udtr-status {
+  padding: 8px 12px;
+  border-radius: 999px;
+  font: 500 12px/1.2 "Segoe UI", sans-serif;
+  color: #fff7ed;
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(8px);
+  text-align: center;
+}
+
+#udtr-root .udtr-translation {
+  width: fit-content;
+  max-width: 100%;
+  padding: 14px 18px;
+  border-radius: 18px;
+  font: 700 clamp(20px, 2vw, 30px)/1.35 "Segoe UI", sans-serif;
+  color: #fffaf4;
+  background: rgba(17, 24, 39, 0.86);
+  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  text-wrap: balance;
+  white-space: pre-wrap;
+}
+
+#udtr-root .udtr-translation:empty {
+  display: none;
+}
+
+html.udtr-hide-native-captions .vjs-text-track-display,
+html.udtr-hide-native-captions [data-purpose*="captions"],
+html.udtr-hide-native-captions [class*="captions-display"],
+html.udtr-hide-native-captions [class*="captions-overlay"],
+html.udtr-hide-native-captions [class*="text-track-display"] {
+  opacity: 0 !important;
+}

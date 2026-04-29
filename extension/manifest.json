@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Udemy Live Subtitle Translator",
+  "version": "0.2.0",
+  "description": "Translates existing Udemy captions or transcript lines into your selected language and overlays them on the video.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://*.udemy.com/course/*/learn/*",
+    "https://translate.googleapis.com/*",
+    "https://libretranslate.de/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Udemy Live Subtitle Translator",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.udemy.com/course/*/learn/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

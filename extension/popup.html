@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Udemy Live Subtitle Translator</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="popup">
+      <section class="screen screen-onboarding" id="onboardingScreen">
+        <section class="hero hero-setup">
+          <p class="eyebrow">Setup</p>
+          <h1>What's your main language?</h1>
+          <p class="hint">We'll translate Udemy captions into this language by default. You can change it later anytime.</p>
+        </section>
+
+        <label class="field field-large">
+          <span>Target language</span>
+          <select id="targetLanguage"></select>
+        </label>
+
+        <label class="field field-large" id="customLanguageField" style="display: none;">
+          <span>Custom language code</span>
+          <input id="customTargetLanguage" type="text" placeholder="Examples: fi, cs, he, zh-HK">
+        </label>
+
+        <button class="primary-button" id="completeOnboardingButton" type="button">Start translating</button>
+
+        <p class="note">
+          Best results come from courses that already have captions or a transcript panel.
+        </p>
+        <p class="status" id="saveStatus">Ready</p>
+      </section>
+
+      <section class="screen screen-settings" id="settingsScreen" hidden>
+        <section class="hero">
+          <p class="eyebrow">Udemy</p>
+          <h1>Live Subtitle Translator</h1>
+          <p class="hint">Translate existing captions or transcript lines into any supported target language.</p>
+        </section>
+
+        <div class="summary-card">
+          <p class="summary-label">Default translation language</p>
+          <p class="summary-value" id="currentLanguageSummary">Turkish</p>
+        </div>
+
+        <label class="row toggle-row">
+          <span>Extension enabled</span>
+          <input id="enabled" type="checkbox">
+        </label>
+
+        <label class="row toggle-row">
+          <span>Hide original captions</span>
+          <input id="hideOriginalCaptions" type="checkbox">
+        </label>
+
+        <label class="field">
+          <span>Target language</span>
+          <select id="settingsTargetLanguage"></select>
+        </label>
+
+        <label class="field" id="settingsCustomLanguageField" style="display: none;">
+          <span>Custom language code</span>
+          <input id="settingsCustomTargetLanguage" type="text" placeholder="Examples: fi, cs, he, zh-HK">
+        </label>
+
+        <label class="field">
+          <span>Source mode</span>
+          <select id="sourceMode">
+            <option value="auto">Automatic</option>
+            <option value="text_track">Text track</option>
+            <option value="native_caption">Native caption DOM</option>
+            <option value="transcript">Transcript panel</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Translation provider</span>
+          <select id="translationProvider">
+            <option value="google_gtx">Google GTX</option>
+            <option value="libretranslate">LibreTranslate</option>
+          </select>
+        </label>
+
+        <label class="field" id="libreEndpointField">
+          <span>LibreTranslate endpoint</span>
+          <input id="libreTranslateEndpoint" type="url" placeholder="https://libretranslate.de/translate">
+        </label>
+
+        <div class="button-row">
+          <button class="secondary-button" id="rerunSetupButton" type="button">Run setup again</button>
+        </div>
+
+        <p class="note">
+          Use any listed language or a custom ISO/BCP47 code. The extension works best when the lecture already has captions or a transcript.
+        </p>
+        <p class="status" id="settingsStatus">Ready</p>
+      </section>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

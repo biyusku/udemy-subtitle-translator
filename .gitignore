@@ -1,0 +1,10 @@
+# Archives
+*.zip
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local notes
+notes/

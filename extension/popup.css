@@ -1,0 +1,172 @@
+:root {
+  color-scheme: light;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  min-width: 330px;
+  background:
+    radial-gradient(circle at top, rgba(255, 219, 181, 0.9), transparent 50%),
+    linear-gradient(180deg, #fff8ef 0%, #fffdf9 100%);
+  color: #1f2937;
+}
+
+.popup {
+  padding: 18px;
+}
+
+.screen[hidden] {
+  display: none !important;
+}
+
+.hero h1 {
+  margin: 4px 0 8px;
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+.hero-setup h1 {
+  font-size: 24px;
+  line-height: 1.08;
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #c2410c;
+}
+
+.hint,
+.note,
+.status {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.row,
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+}
+
+.field-large {
+  margin-top: 18px;
+}
+
+.field {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.field span,
+.row span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+select,
+input[type="url"] {
+  width: 100%;
+  border: 1px solid rgba(194, 65, 12, 0.2);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font: 500 13px/1.2 "Segoe UI", sans-serif;
+  color: #1f2937;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #ea580c;
+}
+
+input[type="text"] {
+  width: 100%;
+  border: 1px solid rgba(194, 65, 12, 0.2);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font: 500 13px/1.2 "Segoe UI", sans-serif;
+  color: #1f2937;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.primary-button,
+.secondary-button {
+  width: 100%;
+  border: 0;
+  border-radius: 14px;
+  padding: 13px 14px;
+  font: 700 13px/1.1 "Segoe UI", sans-serif;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+.primary-button {
+  color: #fff7ed;
+  background: linear-gradient(135deg, #ea580c 0%, #fb923c 100%);
+  box-shadow: 0 14px 30px rgba(234, 88, 12, 0.22);
+}
+
+.secondary-button {
+  color: #9a3412;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(194, 65, 12, 0.16);
+}
+
+.summary-card {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255, 247, 237, 0.92);
+  border: 1px solid rgba(251, 146, 60, 0.18);
+}
+
+.summary-label {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c2410c;
+}
+
+.summary-value {
+  margin: 6px 0 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.button-row {
+  margin-top: 4px;
+}
+
+.note {
+  margin-top: 14px;
+  color: #6b7280;
+}
+
+.field[style*="display: none"] {
+  display: none !important;
+}
+
+.status {
+  margin-top: 12px;
+  color: #9a3412;
+  font-weight: 600;
+}
